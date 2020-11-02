@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PictureView from './PictureView.jsx';
+import styles from '../App.css';
 
 function App() {
   const pimages = [
@@ -16,14 +17,23 @@ function App() {
     'https://zuumers.s3-us-west-1.amazonaws.com/pictures/mantis11.png',
     'https://zuumers.s3-us-west-1.amazonaws.com/pictures/mantis12.jpg',
     'https://zuumers.s3-us-west-1.amazonaws.com/pictures/mantis13.png'
+  ];
 
-  ]
-   const [images, setImages] = useState(pimages)
+   const [images, setImages] = useState(pimages);
+   const [CurrentImage, setImage] = useState(pimages[0])
+
+  function handleClick(e) {
+    console.log('clicked', e);
+    setImage(e.image);
+   };
 
     return (
-      <div>
+      <div className={styles.GalleryContainer}>
       hello Zuumers!
-      <PictureView images={images}/>
+      <div>
+        <img className={styles.currentImage} src={CurrentImage} ></img>
+      </div>
+      <PictureView currentImage={CurrentImage} images={images} handleClick={handleClick}/>
       </div>
     );
 

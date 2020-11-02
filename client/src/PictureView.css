@@ -1,0 +1,16 @@
+.thumbnailContainer {
+  display:flex;
+  width: 98%;
+  margin: auto;
+  margin-top: 5%;
+ overflow-x: hidden;
+ overflow-x: scroll;
+}
+
+.images {
+  border-radius: 10px;
+}
+
+.images:hover {
+  cursor: pointer;
+}

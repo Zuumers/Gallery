@@ -1,0 +1,11 @@
+.GalleryContainer {
+  width: 50%;
+  /* height: 700px; */
+}
+
+.currentImage {
+  display: flex;
+  margin: auto;
+  width: 95%;
+
+}
