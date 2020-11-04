@@ -1,0 +1,19 @@
+.Mantis {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 48%;
+
+/* grid-template-columns: 17% 17% 17% 17% 17% 17%;
+grid-template-rows: auto; */
+}
+
+.Title {
+font-size: 30px;
+grid-column: 1 / span 6;
+}
+
+.dropMenu {
+
+  width: 40%;
+}
