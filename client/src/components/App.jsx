@@ -21,30 +21,21 @@ function App() {
   ];
 
   const [images, setImages] = useState(pimages);
-  const [CurrentImage, setImage] = useState(pimages[0])
+  const [CurrentImage, setImage] = useState(pimages[0]);
+  const [ModelSpec, setSpec] = useState({models:"n/a", colors:"n/a"});
+  const [isAvaiable, setAvailable] = useState(true);
 
   function handleClick(e) {
     console.log('clicked', e);
     setImage(e.image);
   };
 
-  //  const zoom = document.querySelector("#currentImage");
+  function handleSubmit(info) {
+    console.log(info)
+    setSpec(info)
 
-  //  zoom.addEventListener("mousemove", (e) => {
-  //    zoom.style.backgroundPositionX = -e.offsetX + "px";
-  //    zoom.style.backgroundPositionY = -e.offsetY + "px";
+  };
 
-
-  //  })
-  // function zoom(e) {
-  //   let ele = document.getElementById("currentImage");
-  //   ele.style.display = "inline-block";
-  //   let img = document.getElementById("currentImage");
-  //   let posX = e.offsetX ? (e.pageX) : event.pageX - img.offsetLeft;
-  //   let posY = e.offsetY ? (e.pageY) : event.pageY - img.offsetTop;
-
-
-  // }
 
   return (
     <div className={styles.container}>
@@ -56,7 +47,7 @@ function App() {
         </div>
         <PictureView currentImage={CurrentImage} images={images} handleClick={handleClick} />
       </div>
-      <MantisInfo />
+      <MantisInfo handleSubmit={handleSubmit} isAvaiable={isAvaiable} />
     </div>
   );
 
