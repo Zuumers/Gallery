@@ -37,10 +37,8 @@ function App() {
 
   };
 
-  function NextImage(i) {
-    console.log('clicked next', CurrentImage);
-    // i += 1
-    // let nextIdx = idx +1
+  function NextImage() {
+    // console.log('clicked next', CurrentImage);
     if (idx === pimages.length-1){
       setIdx(0)
       setImage(images[idx])
@@ -51,7 +49,7 @@ function App() {
   }
 
   function PrevImage() {
-    console.log('clicked prev', CurrentImage);
+    // console.log('clicked prev', CurrentImage);
     if (idx === 0){
       setIdx(pimages.length-1)
       setImage(images[idx])
