@@ -23,7 +23,8 @@ function App() {
   const [images, setImages] = useState(pimages);
   const [CurrentImage, setImage] = useState(pimages[0]);
   const [ModelSpec, setSpec] = useState({models:"n/a", colors:"n/a"});
-  const [isAvaiable, setAvailable] = useState(true);
+  const [isAvailable, setAvailable] = useState(true);
+  const [idx, setIdx] = useState(0)
 
   function handleClick(e) {
     console.log('clicked', e);
@@ -36,18 +37,42 @@ function App() {
 
   };
 
+  function NextImage(i) {
+    console.log('clicked next', CurrentImage);
+    // i += 1
+    // let nextIdx = idx +1
+    if (idx === pimages.length-1){
+      setIdx(0)
+      setImage(images[idx])
+    } else {
+      setIdx(idx => idx +1);
+      setImage(images[idx])
+    }
+  }
+
+  function PrevImage() {
+    console.log('clicked prev', CurrentImage);
+    if (idx === 0){
+      setIdx(pimages.length-1)
+      setImage(images[idx])
+    } else {
+      setIdx(idx => idx -1);
+      setImage(images[idx])
+    }
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.GalleryContainer}>
         hello Zuumers!
-       <div>
-          <img className={styles.currentImage} id="currentImage" src={CurrentImage} ></img>
-          {/* <img className={styles.currentImage2} id="currentImage2" src={CurrentImage} width="200%" height="200%"></img> */}
+       <div className={styles.mainImage}>
+          <button className={styles.buttonL} onClick={PrevImage}>L</button>
+           <img className={styles.currentImage} id="currentImage" src={images[idx]} ></img>
+          <button className={styles.buttonR} onClick={NextImage}>R</button>
         </div>
         <PictureView currentImage={CurrentImage} images={images} handleClick={handleClick} />
       </div>
-      <MantisInfo handleSubmit={handleSubmit} isAvaiable={isAvaiable} />
+      <MantisInfo handleSubmit={handleSubmit} isAvailable={isAvailable} />
     </div>
   );
 
