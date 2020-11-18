@@ -65,12 +65,7 @@ font-family: "DIN Next",sans-serif;
   text-align-last: center;
   font-family: "DIN Next",sans-serif;
 }
-/* .Chart {
-  display: grid;
-  border-top: black;
-  grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
-  grid-template-columns: 100px 100px 100px;
-} */
+
 .Chart {
   font-family: "DIN Next",sans-serif;
   text-align: center;
@@ -130,7 +125,12 @@ font-family: "DIN Next",sans-serif;
 .heading1 {
   font-weight: bold;
   color: rgb(43, 42, 42);
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 5px;
   margin-top: 10px;
+  font-family: "DIN Next",sans-serif;
+}
+
+.SpecsChart {
+  background-color: grey;
 }

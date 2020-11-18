@@ -22,14 +22,25 @@
   border:none;
   color: white;
   background-color: rgb(60, 187, 226);
+  /* animation-direction: alternate; */
 }
+
 .currentImage {
   display: flex;
   margin: auto;
   width: 80%;
+  height:80%;
   /* background-position: var(--x) var(--y); */
-
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  /* animation-delay: 0.5s; */
+  /* animation-iteration-count: 2; */
 }
+/* @keyframes move {
+  0% { transform: translateX(0%)}
+   100% { transform: translateX(100%)  }
+} */
 
 .currentImage2 {
   display: flex;

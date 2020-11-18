@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PictureView from './PictureView.jsx';
 import MantisInfo from './MantisInfo.jsx';
+import MantisSpec2 from './MantisSpec2.jsx';
 import styles from '../App.css';
 
 function App() {
@@ -22,17 +23,17 @@ function App() {
 
   const [images, setImages] = useState(pimages);
   const [CurrentImage, setImage] = useState(pimages[0]);
-  const [ModelSpec, setSpec] = useState({models:"n/a", colors:"n/a"});
+  const [ModelSpec, setSpec] = useState({models:"n/a", colors:"n/a", shipMethod: "n/a"});
   const [isAvailable, setAvailable] = useState(true);
   const [idx, setIdx] = useState(0)
 
   function handleClick(e) {
-    console.log('clicked', e);
+    console.log('clicked', e.image);
     setImage(e.image);
   };
 
   function handleSubmit(info) {
-    console.log(info)
+    console.log(ModelSpec)
     setSpec(info)
 
   };
@@ -71,6 +72,7 @@ function App() {
         <PictureView currentImage={CurrentImage} images={images} handleClick={handleClick} />
       </div>
       <MantisInfo handleSubmit={handleSubmit} isAvailable={isAvailable} />
+      <MantisSpec2/>
     </div>
   );
 
