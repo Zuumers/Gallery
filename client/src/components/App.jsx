@@ -66,7 +66,7 @@ function App() {
         hello Zuumers!
        <div className={styles.mainImage}>
           <button className={styles.buttonL} onClick={PrevImage}>L</button>
-           <img className={styles.currentImage} id="currentImage" src={images[idx]} ></img>
+           <img className={styles.currentImage} id="currentImage" src={CurrentImage} ></img>
           <button className={styles.buttonR} onClick={NextImage}>R</button>
         </div>
         <PictureView currentImage={CurrentImage} images={images} handleClick={handleClick} />
