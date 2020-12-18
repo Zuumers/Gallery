@@ -1,16 +1,25 @@
 .thumbnailContainer {
   display:flex;
+  flex-flow: wrap;
   width: 98%;
+  height: 200px;
   margin: auto;
   margin-top: 5%;
- overflow-x: hidden;
- overflow-x: scroll;
+ /* overflow-x: hidden;
+ overflow-x: scroll; */
 }
 
 .images {
   border-radius: 10px;
+  padding: 1%;
 }
 
+.imagesBorder {
+  border-color: red;
+  border-radius: 20px;
+  background-color: red;
+  padding: 1%;
+}
 .images:hover {
   cursor: pointer;
 }
